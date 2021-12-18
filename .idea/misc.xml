@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/IT/Adroid/AndroidStudioProjects/TimeTable/app/src/main/res/drawable/bg_button_conner.xml" value="0.26256410256410256" />
+        <entry key="..\:/IT/Adroid/AndroidStudioProjects/TimeTable/app/src/main/res/drawable/bg_edittext_conner.xml" value="0.26256410256410256" />
+        <entry key="..\:/IT/Adroid/AndroidStudioProjects/TimeTable/app/src/main/res/drawable/bg_white_conner.xml" value="0.26256410256410256" />
+        <entry key="..\:/IT/Adroid/AndroidStudioProjects/TimeTable/app/src/main/res/drawable/bg_yellow_conner.xml" value="0.26256410256410256" />
+        <entry key="..\:/IT/Adroid/AndroidStudioProjects/TimeTable/app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.26256410256410256" />
+        <entry key="..\:/IT/Adroid/AndroidStudioProjects/TimeTable/app/src/main/res/drawable/ic_baseline_people_24.xml" value="0.26256410256410256" />
+        <entry key="..\:/IT/Adroid/AndroidStudioProjects/TimeTable/app/src/main/res/drawable/ic_email.xml" value="0.26256410256410256" />
+        <entry key="..\:/IT/Adroid/AndroidStudioProjects/TimeTable/app/src/main/res/drawable/ic_lock.xml" value="0.26256410256410256" />
+        <entry key="..\:/IT/Adroid/AndroidStudioProjects/TimeTable/app/src/main/res/drawable/ic_person.xml" value="0.26256410256410256" />
+        <entry key="..\:/IT/Adroid/AndroidStudioProjects/TimeTable/app/src/main/res/drawable/round_bg.xml" value="0.26256410256410256" />
+        <entry key="..\:/IT/Adroid/AndroidStudioProjects/TimeTable/app/src/main/res/drawable/round_border.xml" value="0.26256410256410256" />
+        <entry key="..\:/IT/Adroid/AndroidStudioProjects/TimeTable/app/src/main/res/drawable/wave.xml" value="0.26256410256410256" />
+        <entry key="..\:/IT/Adroid/AndroidStudioProjects/TimeTable/app/src/main/res/layout/activity_login.xml" value="0.25052083333333336" />
+        <entry key="..\:/IT/Adroid/AndroidStudioProjects/TimeTable/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/IT/Adroid/AndroidStudioProjects/TimeTable/app/src/main/res/layout/activity_profilee.xml" value="0.25052083333333336" />
+        <entry key="..\:/IT/Adroid/AndroidStudioProjects/TimeTable/app/src/main/res/layout/activity_subject.xml" value="0.25052083333333336" />
+        <entry key="..\:/IT/Adroid/AndroidStudioProjects/TimeTable/app/src/main/res/layout/activity_subjectof_day.xml" value="0.25052083333333336" />
+        <entry key="..\:/IT/Adroid/AndroidStudioProjects/TimeTable/app/src/main/res/layout/item.xml" value="0.23645833333333333" />
+        <entry key="..\:/IT/Adroid/AndroidStudioProjects/TimeTable/app/src/main/res/layout/item_day.xml" value="0.25052083333333336" />
+        <entry key="..\:/IT/Adroid/AndroidStudioProjects/TimeTable/app/src/main/res/layout/item_subject.xml" value="0.23645833333333333" />
+        <entry key="..\:/IT/Adroid/AndroidStudioProjects/TimeTable/app/src/main/res/layout/item_subject_ofday.xml" value="0.25052083333333336" />
+        <entry key="..\:/IT/Adroid/AndroidStudioProjects/TimeTable/app/src/main/res/layout/item_subject_selected.xml" value="0.25052083333333336" />
+        <entry key="..\:/IT/Adroid/AndroidStudioProjects/TimeTable/app/src/main/res/layout/item_subject_spiner.xml" value="0.25052083333333336" />
+        <entry key="..\:/IT/Adroid/AndroidStudioProjects/TimeTable/app/src/main/res/layout/layout_dialog.xml" value="0.25052083333333336" />
+        <entry key="..\:/IT/Adroid/AndroidStudioProjects/TimeTable/app/src/main/res/layout/layout_dialog2.xml" value="0.25052083333333336" />
+        <entry key="..\:/IT/Adroid/AndroidStudioProjects/TimeTable/app/src/main/res/menu/menu.xml" value="0.25052083333333336" />
+        <entry key="..\:/IT/Adroid/AndroidStudioProjects/TimeTable/app/src/main/res/menu/menu2.xml" value="0.25052083333333336" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
