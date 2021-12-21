@@ -19,11 +19,11 @@ import java.util.ArrayList;
 import Day.Day;
 
 public class SubjectDAapter extends BaseAdapter {
-    private SubjectofDay mContext;
+    private Context mContext;
     private ArrayList<SubjectD> arrayList;
     int layout;
 
-    public SubjectDAapter(SubjectofDay mContext, ArrayList<SubjectD> arrayList, int layout) {
+    public SubjectDAapter(Context mContext, ArrayList<SubjectD> arrayList, int layout) {
         this.mContext = mContext;
         this.arrayList = arrayList;
         this.layout = layout;
@@ -56,26 +56,14 @@ public class SubjectDAapter extends BaseAdapter {
         txtstartTime =view.findViewById(R.id.startTime);
         txtEndTime = view.findViewById(R.id.endTime);
         img = view.findViewById(R.id.ivDayDetails);
-        btnDelete = view.findViewById(R.id.deleteSoD);
-        btnEdit = view.findViewById(R.id.editSoD);
+
 
         txtTittle.setText(arrayList.get(i).getTittle());
         txtstartTime.setText(arrayList.get(i).getStartTime());
         txtEndTime.setText(arrayList.get(i).getEndTime());
         Glide.with(mContext).load(arrayList.get(i).getHinhanh()).into(img);
 
-        btnEdit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mContext.Update(i);
-            }
-        });
-        btnDelete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mContext.Delete(i);
-            }
-        });
+
 
         return view;
     }

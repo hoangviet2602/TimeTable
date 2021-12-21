@@ -11,7 +11,9 @@
         android:textColor="@color/black"
         android:gravity="center"
         android:background="@drawable/bg_yellow_conner"
-        android:text="Thêm mới"/>
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:text="Chỉnh Sửa"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -37,19 +39,22 @@
         android:padding="16dp"
         android:orientation="horizontal">
         <TextView
+
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:textSize="20dp"
             android:textColor="@color/black"
             android:gravity="center"
             android:text="Start Time"/>
-        <EditText
-            android:id="@+id/dia_startitme"
-            android:background="@drawable/bg_edittext_conner"
-            android:layout_marginLeft="20dp"
-            android:layout_width="270dp"
-            android:layout_height="40dp"
-            />
+        <TextView
+            android:id="@+id/time1E"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textColor="#E31616"
+            android:gravity="center"
+            android:layout_marginLeft="70dp"
+            android:text="Select Time"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -63,13 +68,15 @@
             android:textColor="@color/black"
             android:gravity="center"
             android:text="End Time"/>
-        <EditText
-            android:id="@+id/dia_endtime"
-            android:background="@drawable/bg_edittext_conner"
-            android:layout_marginLeft="20dp"
-            android:layout_width="270dp"
-            android:layout_height="40dp"
-            />
+        <TextView
+            android:layout_marginLeft="70dp"
+            android:id="@+id/Time2E"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textColor="#E11010"
+            android:gravity="center"
+            android:text="Select Time"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -77,19 +84,34 @@
         android:padding="16dp"
         android:orientation="horizontal">
         <Button
-            android:background="@drawable/bg_button_conner"
+            android:textColor="#E10F0F"
+            android:id="@+id/delete"
+            android:background="?android:attr/selectableItemBackground"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Xóa"
+            android:layout_marginLeft="70dp"
+            android:textSize="18dp"
+            />
+        <Button
+            android:layout_marginLeft="30dp"
+            android:textColor="@color/purple_500"
             android:id="@+id/dialogcancel"
-            android:layout_width="150dp"
-            android:layout_height="50dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="Hủy"
+            android:textSize="18dp"
             />
         <Button
             android:id="@+id/dialogadd"
-            android:background="@drawable/bg_button_conner"
-            android:layout_marginLeft="70dp"
-            android:layout_width="150dp"
-            android:layout_height="50dp"
-            android:text="Xác nhận"
+            android:background="?android:attr/selectableItemBackground"
+            android:layout_marginLeft="20dp"
+            android:textSize="18dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/purple_500"
+            android:text="Lưu"
             />
     </LinearLayout>
 </LinearLayout>

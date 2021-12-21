@@ -1,8 +1,9 @@
 <androidx.cardview.widget.CardView android:layout_height="wrap_content"
     android:layout_width="match_parent"
-
-        android:elevation="4dp"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:layout_margin="20dp"
+    app:elevation="4dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -29,21 +30,7 @@
             android:textSize="24sp"
             android:textStyle="bold" />
 
-        <ImageButton
-            android:id="@+id/edit"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginLeft="350dp"
-            android:layout_marginTop="50dp"
-            android:src="@drawable/ic_baseline_edit_24" />
 
-        <ImageButton
-            android:id="@+id/delete"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginLeft="300dp"
-            android:layout_marginTop="50dp"
-            android:src="@drawable/ic_baseline_delete_24" />
 
 
 

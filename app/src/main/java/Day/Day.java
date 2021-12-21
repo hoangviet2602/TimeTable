@@ -13,6 +13,10 @@ public class Day implements Serializable {
         this.tittle = tittle;
     }
 
+    public Day() {
+
+    }
+
     public int getId() {
         return id;
     }

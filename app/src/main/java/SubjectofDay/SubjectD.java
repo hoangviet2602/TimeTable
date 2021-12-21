@@ -9,23 +9,29 @@ public class SubjectD {
     String hinhanh;
     String startTime;
     String endTime;
+    int sort;
 
-    public SubjectD(int id, int idThu, int idSubject, String tittle, String hinhanh, String startTime, String endTime) {
-        this.idUser = id;
+    public SubjectD(int idUser, int idThu, int idSubject, String tittle, String hinhanh, String startTime, String endTime, int sort) {
+        this.idUser = idUser;
         this.idThu = idThu;
         this.idSubject = idSubject;
         this.tittle = tittle;
         this.hinhanh = hinhanh;
         this.startTime = startTime;
         this.endTime = endTime;
+        this.sort = sort;
     }
 
-    public int getId() {
+    public SubjectD() {
+
+    }
+
+    public int getIdUser() {
         return idUser;
     }
 
-    public void setId(int id) {
-        this.idUser = id;
+    public void setIdUser(int idUser) {
+        this.idUser = idUser;
     }
 
     public int getIdThu() {
@@ -74,5 +80,13 @@ public class SubjectD {
 
     public void setEndTime(String endTime) {
         this.endTime = endTime;
+    }
+
+    public int getSort() {
+        return sort;
+    }
+
+    public void setSort(int sort) {
+        this.sort = sort;
     }
 }

@@ -2,9 +2,11 @@ package com.example.timetable;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -13,8 +15,16 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.w3c.dom.Text;
 
 import java.util.ArrayList;
@@ -29,6 +39,10 @@ public class MainActivity extends AppCompatActivity {
     DayAdapter  adapter;
     Day day;
     ArrayList<Day> listDay = new ArrayList<>();
+    public static User user ;
+    public static boolean islogin = false;
+    public static String http  = "http://192.168.1.102/"; //Thay đổi  Địa chỉ ip của máy code mới chạy dc
+    private static  final String BASE_URL = http+"TimeTable/day.php";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,13 +69,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
         getDay();
         lvDay.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                //Toast.makeText(getApplicationContext(), ""+listDay.get(i).getTittle(), Toast.LENGTH_SHORT).show();
-                //startActivity(new Intent(getApplicationContext(), SubjectofDay.class));
+
 
                 Intent intent = new Intent(getApplicationContext(), SubjectofDay.class);
                 Bundle bundle = new Bundle();
@@ -72,21 +84,36 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
-    private void getDay() {
+    private  void getDay(){
         lvDay = findViewById(R.id.lvday);
-
-        listDay.add(new Day(1,"D://IT//Adroid/Photo/noti_logo.png","Thứ 2"));
-        listDay.add(new Day(2,"D:\\IT\\Adroid\\Photo\\noti_logo.png","Thứ 3"));
-        listDay.add(new Day(3,"D:\\IT\\Adroid\\Photo\\noti_logo.png","Thứ 4"));
-        listDay.add(new Day(4,"D:\\IT\\Adroid\\Photo\\noti_logo.png","Thứ 5"));
-        listDay.add(new Day(5,"D:\\IT\\Adroid\\Photo\\noti_logo.png","Thứ 6"));
-        listDay.add(new Day(1,"D:\\IT\\Adroid\\Photo\\noti_logo.png","Thứ 7"));
-        listDay.add(new Day(1,"D:\\IT\\Adroid\\Photo\\noti_logo.png","Chủ nhật"));
-        listDay.add(new Day(1,"D:\\IT\\Adroid\\Photo\\noti_logo.png","Chủ nhật"));listDay.add(new Day(1,"D:\\IT\\Adroid\\Photo\\noti_logo.png","Chủ nhật"));
-        listDay.add(new Day(1,"D:\\IT\\Adroid\\Photo\\noti_logo.png","Chủ nhật"));
-
-        adapter = new DayAdapter(MainActivity.this,listDay,R.layout.item_day);
-        lvDay.setAdapter(adapter);
+        RequestQueue queue = Volley.newRequestQueue(this);
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, BASE_URL, null,
+                new Response.Listener<JSONArray>() {
+                    @Override
+                    public void onResponse(JSONArray response) {
+                        for(int i = 0 ; i <=response.length();i++){
+                            try{
+                                JSONObject object = response.getJSONObject(i);
+                                Day day = new Day();
+                                day.setId(object.getInt("idDay"));
+                                day.setTittle(object.getString("Tittle"));
+                                day.setHinhanh(object.getString("Image"));
+                                listDay.add(day);
+                            }catch (Exception e){
+                                e.printStackTrace();
+                            }
+                        }
+                       adapter = new DayAdapter(MainActivity.this,listDay,R.layout.item_day);
+                        lvDay.setAdapter(adapter);
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                //Toast.makeText( null, "lỗi", Toast.LENGTH_SHORT).show();
+                Log.d("tag","onErrorRespone: " +error.getMessage());
+            }
+        });
+        queue.add(jsonArrayRequest);
     }
+
 }
