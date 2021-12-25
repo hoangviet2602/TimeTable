@@ -226,7 +226,7 @@ public class SubjectActivity extends AppCompatActivity {
                             try{
                                 JSONObject object = response.getJSONObject(i);
 
-                                listSubject.add(new Subject(object.getInt("idMon"),object.getString("Tittle"),
+                                listSubject.add(new Subject(object.getInt("idMon"),object.getString("Tittle"),http+
                                         object.getString("Image")));
                                 idfinal = object.getInt("idMon");
                             }catch (Exception e){
@@ -288,7 +288,7 @@ public class SubjectActivity extends AppCompatActivity {
             public void onClick(View view) {
                 //listSubject.add(new Subject(listSubject.size()+1,subjectname.getText().toString(),""));
 
-                AddSubject(idfinal + 1,subjectname.getText().toString(),"");
+                AddSubject(idfinal + 1,subjectname.getText().toString(),"TimeTable/Image/subject.png");
                 getSubject();
                 Toast.makeText(getApplicationContext(), "Thêm thành công", Toast.LENGTH_SHORT).show();
                 dialog.dismiss();

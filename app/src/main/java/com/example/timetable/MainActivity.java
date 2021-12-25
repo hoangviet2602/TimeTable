@@ -97,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
                                 Day day = new Day();
                                 day.setId(object.getInt("idDay"));
                                 day.setTittle(object.getString("Tittle"));
-                                day.setHinhanh(object.getString("Image"));
+                                day.setHinhanh(http+object.getString("Image"));
                                 listDay.add(day);
                             }catch (Exception e){
                                 e.printStackTrace();

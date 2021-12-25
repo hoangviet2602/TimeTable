@@ -42,7 +42,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
+        getSupportActionBar().hide();
 
         txtEmail = findViewById(R.id.inputEmail);
         txtPass = findViewById(R.id.inputPassword);
@@ -51,9 +51,8 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(LoginActivity.this,MainActivity.class);
-                startActivity(intent);
-                //login();
+
+                login();
             }
         });
 
@@ -70,9 +69,7 @@ public class LoginActivity extends AppCompatActivity {
                         JSONObject jsonObject  = new JSONObject(response);
                         String success = jsonObject.getString("success");
                         JSONArray jsonArray = jsonObject.getJSONArray("login");
-                        Toast.makeText(LoginActivity.this,jsonArray.toString() ,Toast.LENGTH_SHORT).show();
                         if(success.equals("1")){
-                            Toast.makeText(LoginActivity.this,"OK: " ,Toast.LENGTH_SHORT).show();
                             for(int i = 0 ; i < jsonArray.length();i++){
                                 JSONObject object = jsonArray.getJSONObject(i);
 
@@ -82,11 +79,14 @@ public class LoginActivity extends AppCompatActivity {
                                 User user = new User();
                                 user.setIdUser(object.getInt("idUser"));
                                 user.setUsername(object.getString("Username").trim());
+                                user.setFullName(object.getString("FullName").trim());
+                                user.setPhone(object.getString("Phone").trim());
+                                user.setDob(object.getString("Dob").trim());
                                 user.setPass(object.getString("Pass").trim());
                                 Users.add(user);
 
 
-                                Toast.makeText(LoginActivity.this,"Tên: " +  user.getUsername(),Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LoginActivity.this,"Hello  " +  user.getUsername(),Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(LoginActivity.this,MainActivity.class);
                                 startActivity(intent);
                                 finish();

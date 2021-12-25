@@ -1,5 +1,6 @@
 package com.example.timetable;
 
+import static com.example.timetable.LoginActivity.Users;
 import static com.example.timetable.MainActivity.http;
 
 import androidx.appcompat.app.AlertDialog;
@@ -132,6 +133,7 @@ public class SubjectofDay extends AppCompatActivity {
             }
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
+
             }
         });
 
@@ -268,7 +270,7 @@ public class SubjectofDay extends AppCompatActivity {
     }
 
     private  void getSubjectURL(){
-        List<Subject> list = new ArrayList<>();
+
         RequestQueue queue = Volley.newRequestQueue(this);
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, BASE_URL_Subject, null,
                 new Response.Listener<JSONArray>() {
@@ -279,7 +281,7 @@ public class SubjectofDay extends AppCompatActivity {
                             try{
                                 JSONObject object = response.getJSONObject(i);
 
-                                listSubject.add(new Subject(object.getInt("idMon"),object.getString("Tittle"),
+                                listSubject.add(new Subject(object.getInt("idMon"),object.getString("Tittle"),http+
                                         object.getString("Image")));
 
 
@@ -478,7 +480,8 @@ public class SubjectofDay extends AppCompatActivity {
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
-
+                nameSubject = subject.getTittle();
+                idSuject = subject.getIdSubject();
             }
         });
 
@@ -503,7 +506,6 @@ public class SubjectofDay extends AppCompatActivity {
                             subject.getIdUser(), time1.getText().toString(),time2.getText().toString());
                     dialog.dismiss();
                 }
-
             }
         });
         btnDelete.setOnClickListener(new View.OnClickListener() {
@@ -535,7 +537,7 @@ public class SubjectofDay extends AppCompatActivity {
                                 subjectD.setTittle(object.getString("Tittle").trim());
                                 subjectD.setStartTime(object.getString("Starttime").trim());
                                 subjectD.setEndTime(object.getString("EndTime").trim());
-                                subjectD.setHinhanh(object.getString("Image").trim());
+                                subjectD.setHinhanh(http+object.getString("Image").trim());
                                 subjectD.setIdSubject(object.getInt("idMon"));
                                 subjectD.setIdThu(object.getInt("idDay"));
                                 subjectD.setIdUser(object.getInt("idUser"));
@@ -549,20 +551,20 @@ public class SubjectofDay extends AppCompatActivity {
 
                     }catch(JSONException e){
                         e.printStackTrace();
-                        Toast.makeText(getApplicationContext(),"Error: " + e.toString(),Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(getApplicationContext(),"Error: " + e.toString(),Toast.LENGTH_SHORT).show();
                     }
                 }
             }, new Response.ErrorListener() {
                 @Override
                 public void onErrorResponse(VolleyError error) {
-                    Toast.makeText(getApplicationContext(),"Error: " + error.toString(),Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(getApplicationContext(),"Error: " + error.toString(),Toast.LENGTH_SHORT).show();
                 }
             }){
                 @Override
                 protected Map<String, String> getParams() throws AuthFailureError {
                     Map<String, String> data = new HashMap<>();
                     data.put("idDay", String.valueOf(idDay));
-                    data.put("idUser", String.valueOf(1));
+                    data.put("idUser", String.valueOf(Users.get(0).getIdUser()));
                     return data;
                 }
             };

@@ -45,16 +45,16 @@
             android:textSize="20dp"
             android:textColor="@color/black"
             android:gravity="center"
-            android:text="Start Time"/>
+            android:text="Bắt đầu"/>
         <TextView
             android:id="@+id/tv_time1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20dp"
-            android:textColor="#DA0F0F"
+            android:textColor="#00BCD4"
             android:layout_marginLeft="70dp"
             android:gravity="center"
-            android:text="Select Time"/>
+            android:text="Chọn giờ bắt đầu"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -67,16 +67,16 @@
             android:textSize="20dp"
             android:textColor="@color/black"
             android:gravity="center"
-            android:text="End Time"/>
+            android:text="Kết thúc"/>
         <TextView
             android:id="@+id/tv_time2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20dp"
-            android:textColor="#DA0F0F"
+            android:textColor="#00BCD4"
             android:layout_marginLeft="70dp"
             android:gravity="center"
-            android:text="Select Time"/>
+            android:text="Chọn giờ kết thúc"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -86,7 +86,7 @@
 
         <Button
             android:layout_marginLeft="160dp"
-            android:textColor="@color/purple_500"
+            android:textColor="#DF172F"
             android:id="@+id/dialogcancelA"
             android:background="?android:attr/selectableItemBackground"
             android:layout_width="wrap_content"

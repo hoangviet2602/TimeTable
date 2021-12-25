@@ -28,6 +28,7 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_toRightOf="@+id/ivDayDetails"
+            android:textColor="@color/black"
             android:text="Subjects"
             android:textSize="24sp"
             android:textStyle="bold" />
